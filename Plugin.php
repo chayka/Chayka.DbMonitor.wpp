@@ -28,6 +28,13 @@ class Plugin extends WP\Plugin{
      * Register your action hooks here using $this->addAction();
      */
     public function registerActions() {
+        $view = $this->getView();
+        $this->addAction('wp_footer', function() use ($view) {
+            global $wpdb;
+            $view->assign('queries', $wpdb->queries?$wpdb->queries:[]);
+            echo $view->render('widget/db-monitor');
+        });
+
     	/* chayka: registerActions */
     }
 

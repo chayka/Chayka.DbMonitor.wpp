@@ -1,0 +1,6 @@
+<script type="text/javascript">
+    window.Chayka = window.Chayka || {};
+    window.Chayka.DB = {
+        queries: <?php echo Chayka\Helpers\JsonHelper::encode($wpdb->queries?$wpdb->queries:array());?>;
+    }
+</script>

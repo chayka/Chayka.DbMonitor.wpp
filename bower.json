@@ -1,0 +1,25 @@
+{
+    "name": "Chayka.DbMonitor",
+    "description": "WordPress plugin for DB usage analysis",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        "Boris Mossounov <borix@tut.by>"
+    ],
+    "keywords": [
+        "WordPress",
+        "Chayka",
+        "db",
+        "monitor",
+        "db monitor"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "res/lib",
+        "test",
+        "tests"
+    ],
+    "dependencies": {}
+}

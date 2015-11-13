@@ -1,0 +1,44 @@
+{
+  "generator-chayka": {
+    "support": [
+      "ConsolePages"
+    ],
+    "register": [
+      "registerActions",
+      "registerFilters",
+      "registerResources",
+      "registerConsolePages"
+    ],
+    "appType": "plugin",
+    "appName": "Chayka.DbMonitor",
+    "appDescription": "WordPress plugin for DB usage analysis",
+    "appKeywords": "WordPress, Chayka, db, monitor, db monitor",
+    "appVersion": "0.0.1",
+    "packagistVendor": "chayka",
+    "packagistPackage": "dbmonitor-wpp",
+    "phpNamespace": "Chayka\\DbMonitor",
+    "chaykaFramework": "plugin",
+    "chaykaFrameworkDeps": {
+      "helpers": true,
+      "mvc": true,
+      "wp": true,
+      "core": true
+    },
+    "initDep": true,
+    "initDepPhpClass": "Chayka\\WP\\Plugin",
+    "initDepMessage": "Chayka Framework functionality is not available",
+    "gitInit": true,
+    "gitRemote": "github",
+    "githubUser": "chayka",
+    "gitRemoteRepo": "git@github.com:chayka/Chayka.DbMonitor.wpp.git",
+    "gitPush": true,
+    "ideaProject": "Chayka.DbMonitor.wpp",
+    "ideaDeploymentPath": "/Chayka.Core.wpp/vendor/chayka/dbmonitor-wpp",
+    "appAuthor": "Boris Mossounov",
+    "appAuthorEmail": "borix@tut.by",
+    "appAuthorUri": "http://anotherguru.me/",
+    "appLicense": "MIT",
+    "ideaDeploymentServer": "WP Plugins",
+    "appClass": "Plugin"
+  }
+}

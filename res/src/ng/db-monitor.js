@@ -23,7 +23,7 @@ angular.module('db-monitor', ['chayka-modals', 'chayka-utils'])
                 for (var i = 0, c = rawQueries.length; i < c; i++) {
                     var raw = rawQueries[i];
                     var sql = raw[0];
-                    sql = sql.replace(/\s+(FROM|LEFT|RIGHT|INNER|OUTER|CROSS|WHERE|ORDER|GROUP|HAVING|LIMIT|OR)\b/g, '\n$1');
+                    sql = sql.replace(/\s+(FROM|LEFT|RIGHT|INNER|OUTER|CROSS|WHERE|ORDER|GROUP|HAVING|LIMIT|OR|VALUES)\b/g, '\n$1');
                     sql = sql.replace(/\s+(AND)\b/g, '\n  $1');
                     var time = raw[1];
                     var path = raw[2].split(', ');

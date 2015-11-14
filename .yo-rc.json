@@ -39,6 +39,17 @@
     "appAuthorUri": "http://anotherguru.me/",
     "appLicense": "MIT",
     "ideaDeploymentServer": "WP Plugins",
-    "appClass": "Plugin"
+    "appClass": "Plugin",
+    "consolePages": [
+      "db-monitor"
+    ],
+    "controllers": {
+      "Admin": [
+        "db-monitor"
+      ]
+    },
+    "helpers": [
+      "option"
+    ]
   }
 }

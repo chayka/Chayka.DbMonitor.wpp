@@ -1,0 +1,66 @@
+.chayka-db_monitor-tree_container {
+    height: 400px;
+    width: 800px;
+    overflow: auto;
+    .node {
+        > .item {
+            cursor: pointer;
+            white-space: nowrap;
+
+            > .title {
+            }
+            >.sql{
+                display: none;
+            }
+            > .time {
+                display: inline-block;
+                width: 80px;
+            }
+            > .total {
+                margin-left: 1em;
+            }
+        }
+        .items {
+            padding-left: 1em;
+            .func {
+
+            }
+            .sql {
+
+            }
+        }
+    }
+
+    .node.open {
+        > .item {
+            > .title {
+                /*display: none;*/
+            }
+            > .time {
+                /*display: none;*/
+            }
+            > .total {
+                display: none;
+            }
+
+        }
+        > .items {
+        }
+    }
+    .node.sql{
+        .time{
+            float: left;
+            padding-right: 1em;
+        }
+        .sql{
+            font-family: monospace;
+            font-size: 10px;
+            white-space: pre-wrap;
+            display: inline-block;
+            border-left: 2px dotted gray;
+            margin-top: 1ex;
+            margin-bottom: 3px;
+            padding-left: 1em;
+        }
+    }
+}

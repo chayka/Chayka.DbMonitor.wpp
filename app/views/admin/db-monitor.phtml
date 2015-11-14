@@ -1,0 +1,34 @@
+<h2>DB Monitor</h2>
+<style>
+    .chayka-db_monitor-options .note{
+        margin-bottom: 1em;
+    }
+    .chayka-db_monitor-options .note code{
+        margin-top: 1ex;
+        display: block;
+    }
+</style>
+<div class="chayka-db_monitor-options" data-ng-cloak>
+    <div data-ng-controller="optionsForm" data-ng-init="namespace = 'Chayka.DbMonitor'">
+        <form data-form-validator="validator" novalidate="novalidate">
+            <div class="note">
+                <strong>Heads up:</strong> in order for plugin to work, be sure add to wp-config.php:<br/>
+                <code>define('SAVEQUERIES', true);</code>
+            </div>
+            <div class="note">
+                <strong>Heads up:</strong> to show DB Monitor on any page, open JS console and execute:<br/>
+                <code>Chayka.DB.showMonitor();</code>
+            </div>
+            <div class="form_field fullsize checkbox db_monitor_enabled" data-form-field="dbMonitorEnabled">
+                <label>
+                    <input type="checkbox" data-ng-init="options.dbMonitorEnabled=''" data-ng-model="options.dbMonitorEnabled" data-ng-true-value="'1'" data-ng-false-value="''" title="DB Monitor Enabled"/>
+                    DB Monitor Enabled
+                </label>
+            </div>
+            <!-- chayka: fields -->
+            <div class="buttons">
+                <button class="button button-primary button-large" data-ng-click="saveOptions();">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

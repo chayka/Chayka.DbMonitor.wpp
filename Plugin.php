@@ -15,9 +15,10 @@ class Plugin extends WP\Plugin{
             static::$instance = $app = new self(__FILE__, array(
                 /* chayka: init-controllers */
             ));
-            $app->dbUpdate(array());
 	        $app->addSupport_ConsolePages();
-
+            if(OptionHelper::getOption('dbMonitorEnabled') && !defined('SAVEQUERIES')){
+                define('SAVEQUERIES', true);
+            }
 
             /* chayka: init-addSupport */
         }
@@ -28,13 +29,14 @@ class Plugin extends WP\Plugin{
      * Register your action hooks here using $this->addAction();
      */
     public function registerActions() {
-        $view = $this->getView();
-        $this->addAction('wp_footer', function() use ($view) {
-            global $wpdb;
-            $view->assign('queries', $wpdb->queries?$wpdb->queries:[]);
-            echo $view->render('widget/db-monitor');
-        });
-
+        if(OptionHelper::getOption('dbMonitorEnabled')){
+            $this->addAction('wp_footer', function (){
+                global $wpdb;
+                $view = Plugin::getView();
+                $view->assign('queries', $wpdb->queries ? $wpdb->queries : []);
+                echo $view->render('widget/db-monitor.phtml');
+            });
+        }
     	/* chayka: registerActions */
     }
 
@@ -58,6 +60,12 @@ class Plugin extends WP\Plugin{
         $this->setResSrcDir('src/');
         $this->setResDistDir('dist/');
 
+        $this->registerNgScript('db-monitor', 'ng/db-monitor.js', ['chayka-modals', 'chayka-utils']);
+        $this->registerNgStyle('db-monitor', 'ng/db-monitor.css', ['chayka-modals']);
+
+        if(OptionHelper::getOption('dbMonitorEnabled')){
+            $this->enqueueNgScriptStyle('db-monitor');
+        }
 		/* chayka: registerResources */
     }
 
@@ -65,6 +73,8 @@ class Plugin extends WP\Plugin{
      * Registering console pages
      */
     public function registerConsolePages(){
+        $this->addConsoleSubPage('chayka-core', 'DB Monitor', 'update_core', 'db-monitor', '/admin/db-monitor');
+
         /* chayka: registerConsolePages */
     }
 }

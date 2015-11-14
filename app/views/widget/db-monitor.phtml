@@ -1,6 +1,14 @@
 <script type="text/javascript">
     window.Chayka = window.Chayka || {};
     window.Chayka.DB = {
-        queries: <?php echo Chayka\Helpers\JsonHelper::encode($wpdb->queries?$wpdb->queries:array());?>;
-    }
+        queries: <?php echo Chayka\Helpers\JsonHelper::encode($this->queries?$this->queries:array());?>
+    };
 </script>
+<div data-ng-controller="db_monitor">
+    <div data-modal="_.dbMonitorModal" data-modal-title="DB Monitor" data-on-modal-close="hideMonitor()">
+        <div class="chayka-db_monitor-tree_container">
+            <div data-db-monitor-node="tree"></div>
+        </div>
+    </div>
+</div>
+

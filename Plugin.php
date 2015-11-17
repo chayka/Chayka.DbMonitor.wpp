@@ -30,12 +30,14 @@ class Plugin extends WP\Plugin{
      */
     public function registerActions() {
         if(OptionHelper::getOption('dbMonitorEnabled')){
-            $this->addAction('wp_footer', function (){
+            $cb = function (){
                 global $wpdb;
                 $view = Plugin::getView();
                 $view->assign('queries', $wpdb->queries ? $wpdb->queries : []);
                 echo $view->render('widget/db-monitor.phtml');
-            });
+            };
+            $this->addAction('wp_footer', $cb);
+            $this->addAction('admin_footer', $cb);
         }
     	/* chayka: registerActions */
     }

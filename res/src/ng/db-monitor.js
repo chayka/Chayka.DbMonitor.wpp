@@ -64,7 +64,6 @@ angular.module('db-monitor', ['chayka-modals', 'chayka-utils'])
                     tree.total++;
                 }
 
-                console.dir({tree: tree});
             },
 
             showMonitor: function(){
@@ -111,7 +110,7 @@ angular.module('db-monitor', ['chayka-modals', 'chayka-utils'])
                 '       </div>' +
                 '   </div>' +
                 '</div>',
-            controller: ['$scope', '$element', function($scope, $element){
+            controller: ['$scope', function($scope){
                 angular.extend($scope, {
                     //unfold: false,
 
@@ -137,15 +136,11 @@ angular.module('db-monitor', ['chayka-modals', 'chayka-utils'])
                         $scope.unfoldNode();
                     }
                 });
-                console.dir({scope: $scope});
                 //$element.find('>.item').css('color', $scope.getColor());
             }],
 
             compile: function(element){
                 return utils.recursiveDirectiveCompile(element);
-            },
-
-            link: function($scope, $element){
             }
 
         };

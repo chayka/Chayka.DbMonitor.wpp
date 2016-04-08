@@ -57,7 +57,7 @@ class Plugin extends WP\Plugin{
     public function registerResources($minimize = false) {
         $this->registerBowerResources(true);
 
-        $this->populateResUrl('<%= appName %>');
+        $this->populateResUrl('dbMonitor');
 
         $this->setResSrcDir('src/');
         $this->setResDistDir('dist/');

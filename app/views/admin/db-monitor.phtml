@@ -8,9 +8,8 @@
         display: block;
     }
 </style>
-<div class="chayka-db_monitor-options" data-ng-cloak>
-    <div data-ng-controller="optionsForm" data-ng-init="namespace = 'Chayka.DbMonitor'">
-        <form data-form-validator="validator" novalidate="novalidate">
+<div class="chayka-db_monitor-options" data-ng-cloak data-ng-init="options={};">
+    <div data-console-page-options="options" data-namespace="Chayka.DbMonitor">
             <div class="note">
                 <strong>Heads up:</strong> in order for plugin to work, be sure add to wp-config.php:<br/>
                 <code>define('SAVEQUERIES', true);</code>
@@ -26,9 +25,5 @@
                 </label>
             </div>
             <!-- chayka: fields -->
-            <div class="buttons">
-                <button class="button button-primary button-large" data-ng-click="saveOptions();">Save</button>
-            </div>
-        </form>
     </div>
 </div>

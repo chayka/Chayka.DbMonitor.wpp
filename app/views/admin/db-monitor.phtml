@@ -8,22 +8,20 @@
         display: block;
     }
 </style>
-<div class="chayka-db_monitor-options" data-ng-cloak data-ng-init="options={};">
-    <div data-console-page-options="options" data-namespace="Chayka.DbMonitor">
-            <div class="note">
-                <strong>Heads up:</strong> in order for plugin to work, be sure add to wp-config.php:<br/>
-                <code>define('SAVEQUERIES', true);</code>
-            </div>
-            <div class="note">
-                <strong>Heads up:</strong> to show DB Monitor on any page, open JS console and execute:<br/>
-                <code>Chayka.DB.showMonitor();</code>
-            </div>
-            <div class="form_field fullsize checkbox db_monitor_enabled" data-form-field="dbMonitorEnabled">
-                <label>
-                    <input type="checkbox" data-ng-init="options.dbMonitorEnabled=''" data-ng-model="options.dbMonitorEnabled" data-ng-true-value="'1'" data-ng-false-value="''" title="DB Monitor Enabled"/>
-                    DB Monitor Enabled
-                </label>
-            </div>
-            <!-- chayka: fields -->
+<div class="chayka-db_monitor-options" data-console-page-options="options" data-namespace="Chayka.DbMonitor" data-ng-init="options={};" data-ng-cloak>
+    <div class="note">
+        <strong>Heads up:</strong> in order for plugin to work, be sure add to wp-config.php:<br/>
+        <code>define('SAVEQUERIES', true);</code>
     </div>
+    <div class="note">
+        <strong>Heads up:</strong> to show DB Monitor on any page, open JS console and execute:<br/>
+        <code>Chayka.DB.showMonitor();</code>
+    </div>
+    <div class="form_field fullsize checkbox db_monitor_enabled" data-form-field="dbMonitorEnabled">
+        <label>
+            <input type="checkbox" data-ng-init="options.dbMonitorEnabled=''" data-ng-model="options.dbMonitorEnabled" data-ng-true-value="'1'" data-ng-false-value="''" title="DB Monitor Enabled"/>
+            DB Monitor Enabled
+        </label>
+    </div>
+    <!-- chayka: fields -->
 </div>
